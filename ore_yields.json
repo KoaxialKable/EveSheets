@@ -1,0 +1,98 @@
+{
+  "veldspar": {"volume": 0.1,
+    "name": "Veldspar",
+    "rich_prefix": "Concentrated",
+    "ultra_prefix": "Dense",
+    "minerals": {"tritanium": 415}},
+
+  "scordite": {"volume": 0.15,
+    "name": "Scordite",
+    "rich_prefix": "Condensed",
+    "ultra_prefix": "Massive",
+    "minerals": {"tritanium": 346, "pyerite": 173}},
+
+  "pyroxeres": {"volume": 0.3,
+    "name": "Pyroxeres",
+    "rich_prefix": "Solid",
+    "ultra_prefix": "Viscous",
+    "minerals": {"tritanium": 351, "pyrerite": 25, "mexallon": 50, "nocxium": 5}},
+
+  "plagioclase": {"volume": 0.35,
+    "name": "Plagioclase",
+    "rich_prefix": "Azure",
+    "ultra_prefix": "Rich",
+    "minerals": {"tritanium": 107, "pyerite": 213, "mexallon": 107}},
+
+  "omber": {"volume": 0.6,
+    "name": "Omber",
+    "rich_prefix": "Silvery",
+    "ultra_prefix": "Golden",
+    "minerals": {"tritanium": 85, "pyerite": 34, "isogen": 85}},
+
+  "kernite": {"volume": 1.2,
+    "name": "Kernite",
+    "rich_prefix": "Luminous",
+    "ultra_prefix": "Fiery",
+    "minerals": {"tritanium": 134, "mexallon": 267, "isogen": 134}},
+
+  "jaspet": {"volume": 2.0,
+    "name": "Jaspet",
+    "rich_prefix": "Pure",
+    "ultra_prefix": "Pristine",
+    "minerals": {"mexallon": 350, "nocxium": 75, "zydrine": 8}},
+
+  "hemorphite": {"volume": 3.0,
+    "name": "Hemorphite",
+    "rich_prefix": "Vivid",
+    "ultra_prefix": "Radiant",
+    "minerals": {"tritanium": 2200, "isogen": 100, "nocxium": 120, "zydrine": 15}},
+
+  "hedbergite": {"volume": 3.0,
+    "name": "Hedbergite",
+    "rich_prefix": "Vitric",
+    "ultra_prefix": "Glazed",
+    "minerals": {"pyerite": 1000, "isogen": 200, "nocxium": 100, "zydrine": 19}},
+
+  "gneiss": {"volume": 5.0,
+    "name": "Gneiss",
+    "rich_prefix": "Iridescent",
+    "ultra_prefix": "Prismatic",
+    "minerals": {"tritanium": 2200, "mexallon": 2400, "isogen": 300}},
+
+  "ochre": {"volume": 8.0,
+    "name": "Ochre",
+    "base_prefix": "Dark",
+    "rich_prefix": "Onyx",
+    "ultra_prefix": "Obsidian",
+    "minerals": {"tritanium": 10000, "isogen": 1600, "nocxium": 120}},
+
+  "crokite": {"volume": 16.0,
+    "name": "Crokite",
+    "rich_prefix": "Sharp",
+    "ultra_prefix": "Crystalline",
+    "minerals": {"tritanium": 21000, "nocxium": 760, "zydrine": 135}},
+
+  "spodumain": {"volume": 16.0,
+    "name": "Spodumain",
+    "rich_prefix": "Bright",
+    "ultra_prefix": "Gleaming",
+    "minerals": {"tritanium": 56000, "pyerite": 12050, "mexallon": 2100, "isogen": 450}},
+
+  "bistot": {"volume": 16.0,
+    "name": "Bistot",
+    "rich_prefix": "Triclinic",
+    "ultra_prefix": "Monoclinic",
+    "minerals": {"pyerite": 12000, "zydrine": 450, "megacyte": 100}},
+
+  "arkonor": {"volume": 16.0,
+    "name": "Arkonor",
+    "rich_prefix": "Crimson",
+    "ultra_prefix": "Prime",
+    "minerals": {"tritanium": 22000, "mexallon": 2500, "megacyte": 250}},
+
+  "mercoxit": {"volume": 40.0,
+    "name": "Mercoxit",
+    "rich_prefix": "Magma",
+    "ultra_prefix": "Vitreous",
+    "minerals": {"morphite": 300}}
+}

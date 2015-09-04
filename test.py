@@ -103,3 +103,15 @@ j = json.dumps(outer_json, sort_keys=True, indent=4)
 
 print()
 print(j)
+
+# DB_NAME = (r'..\myEVEdb.db')
+# conn = lite.connect(DB_NAME)
+# curs = conn.cursor()
+
+# query = "select sum(skillpoints) from pilot_skill"
+# curs.execute(query)
+# for row in curs.fetchall():
+#   print('{:,} total skillpoints'.format(int(row[0])))
+
+
+

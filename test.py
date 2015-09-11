@@ -5,6 +5,7 @@ import xml.etree.cElementTree as ET
 from xml.etree.ElementTree import ElementTree
 import sqlite3 as lite
 import json
+from pprint import pprint
 
 # DB_NAME = 'salt.db'
 # conn = lite.connect(DB_NAME)
@@ -28,81 +29,6 @@ import json
 	# curs2.execute(query, param)
 	# print('{:<24}{:<}'.format(row[0],row[1]))
 # list_of_ships_to_scrape = ["Crucifier", "Raven"]
-list_of_ships_to_scrape = ["Condor", "Griffin", "Slasher", "Reaper", "Executioner", "Inquisitor", "Tormentor", "Oracle", "Crucifier", "Omen", "Maller", "Pilgrim", "Curse"]
-outer_json = {}
-for ship_name in list_of_ships_to_scrape:
-	print('Working on {}'.format(ship_name))
-	url_to_scrape = "http://wiki.eveuniversity.org/" + ship_name.replace(' ', '_')
-
-	r = requests.get(url_to_scrape)
-	root = ET.fromstring(r.text)
-
-	current_ship = {}
-	for row in root.findall('.//td[@class="att-line"]'):
-		for cell in row.findall('.//div[@class="att-item"]'):
-			for div in cell:
-				if 'item att-label' in div.attrib.values():
-					if div.text == "Low":
-						name = "low_slots"
-					elif div.text == "High":
-						name = "high_slots"
-					elif div.text == "Medium":
-						name = "mid_slots"
-					elif div.text == "Turrets":
-						name = "turret_hardpoints"
-					elif div.text == "Launchers":
-						name = "launcher_hardpoints"
-					elif div.text == "Sig. Radius":
-						name = "signature_radius"
-					elif div.text == "Scan Res.":
-						name = "scan_resolution"
-					elif div.text == "Shield Resistances":
-						name = "shield_hitpoints"
-					elif div.text == "Armor Resistances":
-						name = "armor_hitpoints"
-					elif div.text == "Max Tgt. Range":
-						name = "max_targeting_range"
-					else:
-						name = div.text.replace(' ', '_').lower()
-				if 'item att-value' in div.attrib.values():
-					value = div.text.split()[0].replace(',', '')
-			current_ship[name] = value
-			# print(name, value)
-		for cell in row.findall('.//div[@class="att-item highlight"]'):
-			for div in cell:
-				if 'item att-label' in div.attrib.values():
-					if div.text == "Low":
-						name = "low_slots"
-					elif div.text == "High":
-						name = "high_slots"
-					elif div.text == "Medium":
-						name = "mid_slots"
-					elif div.text == "Turrets":
-						name = "turret_hardpoints"
-					elif div.text == "Launchers":
-						name = "launcher_hardpoints"
-					elif div.text == "Sig. Radius":
-						name = "signature_radius"
-					elif div.text == "Scan Res.":
-						name = "scan_resolution"
-					elif div.text == "Shield Resistances":
-						name = "shield_hitpoints"
-					elif div.text == "Armor Resistances":
-						name = "armor_hitpoints"
-					elif div.text == "Max Tgt. Range":
-						name = "max_targeting_range"
-					else:
-						name = div.text.replace(' ', '_').lower()
-				if 'item att-value' in div.attrib.values():
-					value = div.text.split()[0]
-			current_ship[name] = value
-			# print(name, value)
-
-	outer_json[ship_name] = current_ship
-j = json.dumps(outer_json, sort_keys=True, indent=4)
-
-print()
-print(j)
 
 # DB_NAME = (r'..\myEVEdb.db')
 # conn = lite.connect(DB_NAME)
@@ -113,5 +39,16 @@ print(j)
 # for row in curs.fetchall():
 #   print('{:,} total skillpoints'.format(int(row[0])))
 
+json_data = open('ships.json')
+Ships = json.load(json_data)
+json_data.close()
 
+classes = []
+
+print("\nAll \"Amarr\" frigates with 3 or more med slots:")
+for ship in Ships:
+  if "med_slots" in Ships[ship]:
+    # if Ships[ship]["med_slots"] >= 3 and ("Frigate" in Ships[ship]["class"] or Ships[ship]["class"] == "Interceptor" or Ships[ship]["class"] == "Covert Ops" or Ships[ship]["class"] == "Electronic Attack Ship") and Ships[ship]["faction"] == "Amarr":
+    if ship == "Moros":
+      print('{:<22} {}'.format(ship, Ships[ship]["class"]))
 
